@@ -1,0 +1,409 @@
+.container{
+    width: 900px;
+    height: 350px;
+    display: flex;
+}
+
+@media(max-width: 920px){
+    .container{
+        transform: scale(.85);
+    }
+}
+
+.select{
+    position: absolute;
+    width: fit-content;
+    height: fit-content;
+    padding: 5px;
+    z-index: 2;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background:rgb(26, 26, 26);
+    color: rgb(199, 199, 199);
+}
+
+.left{
+    width: 15%;
+    height: 100%;
+    background-color: #00c3e3;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-radius: 85px 0 0 85px ;
+    box-shadow: inset 5px 0 4px rgba(0, 0, 0, .2), inset 0 5px 4px rgba(255,255,255,.6);
+    border-right: solid 1px rgb(71, 71, 71);
+    border-left: solid 1px rgb(116, 116, 116);
+    position: relative;
+}
+
+.left::before{
+    content: "";
+    width: 100%;
+    height: 50%;
+    border-radius: 85px 0 0 85px ;
+    position: absolute;
+    border-top: solid 5px rgb(0, 0, 0);
+    transform: translate(0, -5px);
+    cursor: pointer;
+}
+
+
+.left::after{
+    content: "";
+    width: 15%;
+    right: 0;
+    height: 10px;
+    position: absolute;
+    top: -10px;
+    background : var(--background-color);
+    cursor: pointer;
+}
+
+
+.right{
+    width: 15%;
+    height: 100%;
+    background-color: #ff4554;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-radius: 0 85px 85px 0;
+    box-shadow: inset -5px 0 4px rgba(0, 0, 0, .2), inset 0 5px 4px rgba(255,255,255,.6);
+    border-left: solid 1px rgb(71, 71, 71);
+    border-right: solid 1px rgb(116, 116, 116);
+    position: relative
+}
+
+.right::before{
+    content: "";
+    width: 100%;
+    height: 50%;
+    border-radius: 0 85px 85px 0;
+    position: absolute;
+    border-top: solid 5px black;
+    transform: translate(0, -5px);
+    cursor: pointer;
+}
+
+.right::after{
+    content: "";
+    width: 15%;
+    height: 10px;
+    position: absolute;
+    top: -10px;
+    background : var(--background-color);
+    cursor: pointer;
+}
+
+.middle{
+    width: 70%;
+    height: 100%;
+    background-color: #313233;
+    position: relative;
+    padding: 12px;
+    box-shadow: inset 0 2px 2px #000000, inset 0 3px 5px #e9ebee;
+}
+
+.middle::before, .middle::after{
+    content: "";
+    width: 10px;
+    height: 10px;
+    background: var(--background-color);
+    position: absolute;
+}
+
+.middle::after{
+    top: 0;
+    right: 0;
+    border-bottom-left-radius: 6px;
+}
+
+.middle::before{
+    top: 0;
+    left: 0;
+    border-bottom-right-radius: 6px;
+}
+
+.wrapperScreen{
+    width: 100%;
+    height: 100%;
+    border: 1px solid black;
+    border-radius: 2px;
+    padding: 12px;
+}
+
+.leftTop{
+    width: 100%;
+    height: 47%;
+    position: relative;
+    display: grid;
+    place-items: center;
+}
+
+.leftAnalogic{
+    width: 55px;
+    height: 55px;
+    border-radius: 100%;
+    display: grid;
+    place-items: center;
+    position: relative;
+    background-color: #313233;
+    transform: translate(5px, 15px);
+    box-shadow: inset 1px 1px 2px #000000, inset -1px -1px 2px #000000,
+    inset 2px 2px 3px #c2c2c2, inset -2px -2px 3px #c0c0c0, 
+    1px 1px 10px rgb(43, 42, 42);
+}
+
+.leftAnalogic::before{
+    content: "";
+    width: 80%;
+    height: 80%;
+    border: solid 1px rgb(26, 26, 26);
+    position: absolute;
+    border-radius: 100%;
+    box-shadow: inset 0 0 20px #000000;
+    background-color: #5e5e5e;
+}
+
+.leftAnalogic::after{
+    content: "";
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    border-radius: 100%;
+    background-color: #5e5e5e;
+    box-shadow: 1px 1px 10px #5e5e5e;
+}
+
+.leftSelect{
+    width: 20px;
+    height: 8px;
+    background: #313233;
+    position: absolute;
+    top: 30px;
+    border-radius: 3px;
+    box-shadow: 0 2px 2px rgb(95, 95, 95);
+    right: 10px;
+    cursor: pointer;
+}
+
+.leftBottom{
+    height: 53%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.leftButtons{
+    width: 80px;
+    height: 80px;
+    transform: translate(5px, -7px);
+    position: relative;
+    display: grid;
+    place-items: center;
+}
+
+.leftButton{
+    position: absolute;
+    outline: none;
+    padding: 0;
+    display: grid;
+    place-items: center;
+    border: none;
+    width: 25px;
+    box-shadow: inset 0 2px 2px rgb(185, 185, 185), inset 0 -2px 2px rgb(15, 15, 15),
+    1px 1px 3px black;
+    height: 25px;
+    border-radius: 100%;
+    background-color: #313233;
+}
+
+
+.leftButton:first-child{
+    top: 0;
+}
+.leftButton:nth-child(2){
+    right: 0;
+}
+
+.leftButton:nth-child(3){
+    bottom: 0;
+}
+
+.leftButton:nth-child(4){
+    left: 0;
+}
+
+.leftCapture{
+    width: 20px;
+    height: 20px;
+    background: #313233;
+    border-radius: 3px;
+    margin-top: 10px;
+    position: relative;
+    display: grid;
+    place-items: center;
+    transform: translateX(25px);
+    cursor: pointer;
+}
+.leftCapture:active{
+    transform: translateX(25px) scale(.95);
+}
+
+.leftCapture::before{
+    content: "";
+    height: 14px;
+    width: 14px;
+    border-radius: 100%;
+    background-color: #1c1c1d;
+    position: absolute;
+}
+
+.rightButtons{
+    width: 80px;
+    height: 80px;
+    transform: translate(0, 10px);
+    position: relative;
+    display: grid;
+    place-items: center;
+}
+
+.rightTop{
+    width: 100%;
+    height: 47%;
+    position: relative;
+    display: grid;
+    place-items: center;
+}
+
+.rightButton{
+    position: absolute;
+    outline: none;
+    padding: 0;
+    display: grid;
+    place-items: center;
+    border: none;
+    width: 25px;
+    box-shadow: inset 0 2px 2px rgb(185, 185, 185), inset 0 -2px 2px rgb(15, 15, 15),
+    1px 1px 3px black;
+    height: 25px;
+    border-radius: 100%;
+    background-color: #313233;
+    font-weight: 600;
+    color: #d1d1d1;
+}
+
+
+.rightButton:first-child{
+    top: 0;
+}
+.rightButton:nth-child(2){
+    right: 0;
+}
+
+.rightButton:nth-child(3){
+    bottom: 0;
+}
+
+.rightButton:nth-child(4){
+    left: 0;
+}
+
+.rightSelect{
+    position: absolute;
+    font-weight: 700;
+    font-size: 38px;
+    top: 10px;
+    border-radius: 3px;
+    left: 10px;
+    color: #313233;
+    cursor: pointer;
+    filter: drop-shadow(1px 1px 2px rgb(44, 44, 44))
+}
+
+
+.rightSelect:active{
+    transform: scale(.95);
+}
+
+.rightBottom{
+    height: 53%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.rightAnalogic{
+    width: 55px;
+    height: 55px;
+    border-radius: 100%;
+    display: grid;
+    place-items: center;
+    position: relative;
+    background-color: #313233;
+    box-shadow: inset 1px 1px 2px #000000, inset -1px -1px 2px #000000,
+    inset 2px 2px 3px #c2c2c2, inset -2px -2px 3px #c0c0c0, 
+    1px 1px 10px rgb(43, 42, 42);
+}
+
+.rightAnalogic::before{
+    content: "";
+    width: 80%;
+    height: 80%;
+    border: solid 1px rgb(26, 26, 26);
+    position: absolute;
+    border-radius: 100%;
+    box-shadow: inset 0 0 20px #000000;
+    background-color: #5e5e5e;
+}
+
+.rightAnalogic::after{
+    content: "";
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    border-radius: 100%;
+    background-color: #5e5e5e;
+    box-shadow: 1px 1px 10px #5e5e5e;
+}
+
+.rightHome{
+    width: 23px;
+    height: 23px;
+    background: #a3a2a2;
+    margin-top: 30px;
+    position: relative;
+    border-radius: 100%;
+    display: grid;
+    place-items: center;
+    transform: translateX(-25px);
+    color: #1c1c1d;
+    font-size: 14px;
+    border: solid 1px #3a3a3a;
+    cursor: pointer;
+}
+
+.rightHome:active{
+    transform: translateX(-25px) scale(.95);
+}
+
+.rightHome::before{
+    content: "";
+    inset: 2px;
+    border-radius: 100%;
+    background-color: #313233;
+    position: absolute;
+    z-index: -1;
+}
+
+.screen{
+    width: 100%;
+    height: 100%;
+    background-image: url("https://images.tcdn.com.br/img/img_prod/728109/jogo_mario_kart_8_deluxe_nintendo_switch_1035_4_f3147d683b159143316eda5147f6780f_20220224082059.jpg");
+    background-size: 100% 100%;
+    border-radius: 2px;
+}
+
